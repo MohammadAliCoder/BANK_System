@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="607.0" prefWidth="748.0" style="-fx-background-radius: 90; -fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="serverbank.ServerController">
+   <children>
+      <HBox alignment="CENTER_LEFT" layoutX="80.0" layoutY="4.0" prefHeight="48.0" prefWidth="596.0">
+         <children>
+            <ImageView fitHeight="41.0" fitWidth="36.0" onMouseClicked="#Exit" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/exit.png" />
+               </image>
+               <effect>
+                  <DropShadow color="#fc0000" spread="0.53" />
+               </effect>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <ImageView fitHeight="41.0" fitWidth="36.0" onMouseClicked="#min" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/min.png" />
+               </image>
+               <effect>
+                  <DropShadow color="#00ff1e" spread="0.23" />
+               </effect>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <Label text="Bank" textFill="WHITE">
+               <HBox.margin>
+                  <Insets left="150.0" right="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Chiller" size="29.0" />
+               </font>
+               <effect>
+                  <DropShadow color="RED" height="35.83" radius="21.119999999999997" spread="0.72" width="50.65" />
+               </effect>
+            </Label>
+         </children>
+      </HBox>
+      <TabPane layoutX="11.0" layoutY="57.0" prefHeight="496.0" prefWidth="725.0" style="-fx-background-radius: 90;" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Server">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="stateServer" layoutX="14.0" layoutY="16.0" text="State Server : OFF" textFill="WHITE">
+                           <font>
+                              <Font name="Chiller" size="25.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="241.0" layoutY="21.0" mnemonicParsing="false" onAction="#Run_Server" style="-fx-background-radius: 90; -fx-background-color: #0898ab;" text="Run" textFill="WHITE">
+                           <effect>
+                              <DropShadow color="#00fffc" spread="0.49" />
+                           </effect>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Create Account">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="Fname" layoutX="187.0" layoutY="49.0" prefHeight="25.0" prefWidth="353.0" promptText="First Name">
+                           <effect>
+                              <DropShadow color="RED" height="32.86" radius="14.3875" spread="0.39" width="26.69" />
+                           </effect></TextField>
+                        <TextField fx:id="Lname" layoutX="187.0" layoutY="125.0" prefHeight="25.0" prefWidth="354.0" promptText="Last Name">
+                           <effect>
+                              <DropShadow color="RED" height="32.86" radius="14.3875" spread="0.39" width="26.69" />
+                           </effect></TextField>
+                        <TextField fx:id="username" layoutX="186.0" layoutY="203.0" prefHeight="25.0" prefWidth="355.0" promptText="UserName">
+                           <effect>
+                              <DropShadow color="RED" height="32.86" radius="14.3875" spread="0.39" width="26.69" />
+                           </effect></TextField>
+                        <TextField fx:id="password" layoutX="186.0" layoutY="282.0" prefHeight="25.0" prefWidth="355.0" promptText="Password">
+                           <effect>
+                              <DropShadow color="RED" height="32.86" radius="14.3875" spread="0.39" width="26.69" />
+                           </effect></TextField>
+                        <TextField fx:id="amount" layoutX="185.0" layoutY="354.0" prefHeight="25.0" prefWidth="356.0" promptText="Amount">
+                           <effect>
+                              <DropShadow color="RED" height="32.86" radius="14.3875" spread="0.39" width="26.69" />
+                           </effect></TextField>
+                        <Button layoutX="317.0" layoutY="415.0" mnemonicParsing="false" onAction="#Save" prefHeight="25.0" prefWidth="94.0" style="-fx-background-radius: 90; -fx-background-color: #0094a4;" text="Save" textFill="WHITE">
+                           <effect>
+                              <DropShadow color="#22e9ff" height="18.03" radius="9.2575" spread="0.24" />
+                           </effect>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Delete Account">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="Delete_Fname" layoutX="7.0" layoutY="25.0" prefHeight="25.0" prefWidth="368.0" promptText="First Name">
+                           <effect>
+                              <DropShadow color="RED" spread="0.53" />
+                           </effect></TextField>
+                        <TextField fx:id="Delete_Lname" layoutX="7.0" layoutY="87.0" prefHeight="25.0" prefWidth="368.0" promptText="Last Name">
+                           <effect>
+                              <DropShadow color="RED" spread="0.53" />
+                           </effect></TextField>
+                        <Button layoutX="447.0" layoutY="50.0" mnemonicParsing="false" onAction="#Delete" style="-fx-background-color: #0898ab; -fx-background-radius: 90;" text="Delete" textFill="WHITE">
+                           <effect>
+                              <DropShadow color="#00e5ff" spread="0.52" />
+                           </effect>
+                        </Button>
+                        <Button layoutX="552.0" layoutY="50.0" mnemonicParsing="false" onAction="#show" style="-fx-background-color: #0898ab; -fx-background-radius: 90;" text="Show" textFill="WHITE">
+                           <effect>
+                              <DropShadow color="#01e6ff" spread="0.49" />
+                           </effect>
+                        </Button>
+                        <TableView fx:id="Table_show" layoutX="4.0" layoutY="135.0" prefHeight="330.0" prefWidth="727.0">
+                          <columns>
+                            <TableColumn  text="Id" />
+                              <TableColumn  text="First Name" />
+                            <TableColumn  text="Last Name" />
+                              <TableColumn text="UserName" />
+                              <TableColumn  text="Amount" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                           
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Transfers">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="Table_Transfer" layoutX="7.0" layoutY="43.0" prefHeight="419.0" prefWidth="713.0">
+                          <columns>
+                            <TableColumn  text="Id" />
+                            <TableColumn  text="Fname" />
+                              <TableColumn  text="Lname" />
+                              <TableColumn  text="UserName" />
+                              <TableColumn  text="Amount" />
+                              <TableColumn  text="Id Transfer" />
+                              <TableColumn  text="Amount Trasfer" />
+                              <TableColumn  text="Message" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                          
+                        </TableView>
+                        <Button layoutX="14.0" layoutY="10.0" mnemonicParsing="false" onAction="#Show_Transfer" prefHeight="25.0" prefWidth="65.0" style="-fx-background-radius: 90; -fx-background-color: #0898ab;" text="Show" textFill="WHITE">
+                           <effect>
+                              <DropShadow color="#00e5ff" spread="0.62" />
+                           </effect>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+   <effect>
+      <InnerShadow choke="0.51" color="RED" />
+   </effect>
+</AnchorPane>
